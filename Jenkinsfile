@@ -23,7 +23,7 @@ pipeline {
             }
         }
     
-        stage ('Deployment'){
+        stage ('Deployments'){
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
