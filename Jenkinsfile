@@ -28,14 +28,14 @@ pipeline {
                 stage ('Deploy to Staging'){
                     steps {
                         //bat "winscp -i /c/Users/pvakkalam/JenkinsWorkDir/my_Key_Pair.pem **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
-                        winscp "open sftp:ec2-user:/c/Users/pvakkalam/JenkinsWorkDir/my_Key_Pair.pem@${params.tomcat_dev}" "put **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
+                        winscp "open sftp://ec2-user:/c/Users/pvakkalam/JenkinsWorkDir/my_Key_Pair.pem@${params.tomcat_dev}" "put **/target/*.war /var/lib/tomcat8/webapps" "exit"
                     }
                 }
 
                 stage ('Deploy to Production'){
                     steps {
                         //bat "winscp -i /c/Users/pvakkalam/JenkinsWorkDir/my_Key_Pair.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat8/webapps"
-                        winscp "open sftp:ec2-user:/c/Users/pvakkalam/JenkinsWorkDir/my_Key_Pair.pem@${params.tomcat_prod}" "put **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat8/webapps"
+                        winscp "open sftp://ec2-user:/c/Users/pvakkalam/JenkinsWorkDir/my_Key_Pair.pem@${params.tomcat_prod}" "put **/target/*.war e/var/lib/tomcat8/webapps" "exit"
                     }
                 }
 
