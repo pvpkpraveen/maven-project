@@ -5,6 +5,7 @@ pipeline{
             steps{
                 bat 'mvn clean package'
                 # This is a test
+                # This is another test
             }
         }
     }
