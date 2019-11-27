@@ -4,6 +4,7 @@ pipeline{
         stage('Build'){
             steps{
                 bat 'mvn clean package'
+                # This is a test
             }
         }
     }
